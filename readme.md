@@ -8,6 +8,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/ecolines.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/juliuste/ecolines.svg)](https://david-dm.org/juliuste/ecolines)
 [![license](https://img.shields.io/github/license/juliuste/ecolines.svg?style=flat)](license)
+[![fptf version](https://fptf.badges.juliustens.eu/badge/juliuste/ecolines)](https://fptf.badges.juliustens.eu/link/juliuste/ecolines)
 [![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
 
 
