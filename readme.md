@@ -4,10 +4,12 @@
 
 
 [![npm version](https://img.shields.io/npm/v/@juliuste/ecolines.svg)](https://www.npmjs.com/package/@juliuste/ecolines)
-[![build status](https://img.shields.io/travis/juliuste/ecolines.svg)](https://travis-ci.org/juliuste/ecolines)
-![ISC-licensed](https://img.shields.io/github/license/juliuste/ecolines.svg)
-[![fptf version](https://fptf.badges.juliustens.eu/badge/juliuste/ecolines)](https://fptf.badges.juliustens.eu/link/juliuste/ecolines)
-[![chat on gitter](https://badges.gitter.im/public-transport.svg)](https://gitter.im/public-transport)
+[![Build Status](https://travis-ci.org/juliuste/ecolines.svg?branch=master)](https://travis-ci.org/juliuste/ecolines)
+[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/ecolines.svg)](https://greenkeeper.io/)
+[![dependency status](https://img.shields.io/david/juliuste/ecolines.svg)](https://david-dm.org/juliuste/ecolines)
+[![license](https://img.shields.io/github/license/juliuste/ecolines.svg?style=flat)](license)
+[![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
+
 
 Things still missing:
 
