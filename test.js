@@ -118,7 +118,7 @@ test('@juliuste/ecolines.journeys', async (t) => {
 
 	const journeys = await ecolines.journeys(riga, berlin, {when: date, adults: 2, currency})
 
-	t.ok(journeys.length >= 4)
+	t.ok(journeys.length >= 2)
 	for (let journey of journeys) {
 		validate(journey)
 		t.ok(journey.price)
