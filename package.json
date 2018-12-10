@@ -28,7 +28,7 @@
 	"dependencies": {
 		"@mapbox/timespace": "^2.0.4",
 		"country-tz": "^1.0.0",
-		"got": "^9.0.0",
+		"got": "^9.4.0",
 		"lodash.groupby": "^4.6.0",
 		"lodash.isdate": "^4.0.1",
 		"lodash.isstring": "^4.0.1",
