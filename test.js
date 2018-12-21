@@ -1,6 +1,8 @@
 'use strict'
 
-const test = require('tape')
+const tapeWithoutPromise = require('tape')
+const addPromiseSupport = require('tape-promise').default
+const tape = addPromiseSupport(tapeWithoutPromise)
 const countries = require('iso-3166-1')
 const validate = require('validate-fptf')
 const moment = require('moment-timezone')
@@ -11,7 +13,7 @@ const ecolines = require('.')
 
 const timezones = moment.tz.names()
 
-test('@juliuste/ecolines.stations', async (t) => {
+tape('@juliuste/ecolines.stations', async (t) => {
 	const stations = await ecolines.stations()
 
 	t.ok(stations.length > 100)
@@ -34,7 +36,7 @@ test('@juliuste/ecolines.stations', async (t) => {
 	t.end()
 })
 
-test('@juliuste/ecolines.regions', async (t) => {
+tape('@juliuste/ecolines.regions', async (t) => {
 	const regions = await ecolines.regions()
 
 	t.ok(regions.length > 100)
@@ -53,7 +55,7 @@ test('@juliuste/ecolines.regions', async (t) => {
 	t.end()
 })
 
-test('@juliuste/ecolines.stopovers', async (t) => {
+tape('@juliuste/ecolines.stopovers', async (t) => {
 	const berlin = '211'
 	const date = moment.tz('Europe/Berlin').add(5, 'days').startOf('day').toDate()
 	const stopovers = await ecolines.stopovers(berlin, {when: date})
@@ -98,7 +100,7 @@ test('@juliuste/ecolines.stopovers', async (t) => {
 	t.end()
 })
 
-test('@juliuste/ecolines.currencies', async (t) => {
+tape('@juliuste/ecolines.currencies', async (t) => {
 	const currencies = await ecolines.currencies()
 	t.ok(currencies.length >= 4)
 	for (let currency of currencies) t.ok(isCurrency(currency))
@@ -107,7 +109,7 @@ test('@juliuste/ecolines.currencies', async (t) => {
 	t.end()
 })
 
-test('@juliuste/ecolines.journeys', async (t) => {
+tape('@juliuste/ecolines.journeys', async (t) => {
 	const riga = {
 		type: 'station',
 		id: '1'
@@ -145,7 +147,7 @@ test('@juliuste/ecolines.journeys', async (t) => {
 	t.end()
 })
 
-test('@juliuste/ecolines.legDetails', async (t) => {
+tape('@juliuste/ecolines.legDetails', async (t) => {
 	const berlin = '211'
 	const riga = '1'
 	const date = moment.tz('Europe/Riga').add(5, 'days').startOf('day').toDate()
