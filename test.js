@@ -58,7 +58,7 @@ tape('@juliuste/ecolines.regions', async (t) => {
 tape('@juliuste/ecolines.stopovers', async (t) => {
 	const berlin = '211'
 	const date = moment.tz('Europe/Berlin').add(5, 'days').startOf('day').toDate()
-	const stopovers = await ecolines.stopovers(berlin, {when: date})
+	const stopovers = await ecolines.stopovers(berlin, { when: date })
 
 	t.ok(stopovers.length > 4)
 	for (let stopover of stopovers) {
@@ -69,12 +69,12 @@ tape('@juliuste/ecolines.stopovers', async (t) => {
 
 		if (stopover.arrival) {
 			t.ok(+new Date(stopover.arrival) - +date > 0)
-			t.ok(+new Date(stopover.arrival) - +date <= 24*60*60*1000)
+			t.ok(+new Date(stopover.arrival) - +date <= 24 * 60 * 60 * 1000)
 		}
 
 		if (stopover.departure) {
 			t.ok(+new Date(stopover.departure) - +date > 0)
-			t.ok(+new Date(stopover.departure) - +date <= 24*60*60*1000)
+			t.ok(+new Date(stopover.departure) - +date <= 24 * 60 * 60 * 1000)
 		}
 
 		t.ok(stopover.origin)
@@ -118,7 +118,7 @@ tape('@juliuste/ecolines.journeys', async (t) => {
 	const date = moment.tz('Europe/Riga').add(5, 'days').startOf('day').toDate()
 	const currency = 'PLN'
 
-	const journeys = await ecolines.journeys(riga, berlin, {when: date, adults: 2, currency})
+	const journeys = await ecolines.journeys(riga, berlin, { when: date, adults: 2, currency })
 
 	t.ok(journeys.length >= 2)
 	for (let journey of journeys) {
@@ -128,7 +128,7 @@ tape('@juliuste/ecolines.journeys', async (t) => {
 		t.ok(journey.price.amount > 50)
 
 		t.ok(journey.legs[0].origin.id === riga.id)
-		t.ok(journey.legs[journey.legs.length-1].destination.id === berlin)
+		t.ok(journey.legs[journey.legs.length - 1].destination.id === berlin)
 
 		for (let leg of journey.legs) {
 			t.ok(leg.id)
@@ -151,7 +151,7 @@ tape('@juliuste/ecolines.legDetails', async (t) => {
 	const berlin = '211'
 	const riga = '1'
 	const date = moment.tz('Europe/Riga').add(5, 'days').startOf('day').toDate()
-	const journeys = await ecolines.journeys(berlin, riga, {when: date})
+	const journeys = await ecolines.journeys(berlin, riga, { when: date })
 
 	t.ok(journeys.length > 0, 'precondition')
 	const leg = journeys[0].legs[0]
